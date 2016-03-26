@@ -7,8 +7,9 @@ import menjacnica.interfejs.MenjacnicaInterfejs;
 
 public class Menjacnica implements MenjacnicaInterfejs {
 
-	LinkedList<Valuta> valute = new LinkedList<Valuta>();
-	
+	private LinkedList<Valuta> valute = new LinkedList<Valuta>();
+
+
 	@Override
 	public void dodajKurs(Valuta valuta, double prodajniKurs, double kupovniKurs, double srednjiKurs,
 			GregorianCalendar datum) {
@@ -21,10 +22,8 @@ public class Menjacnica implements MenjacnicaInterfejs {
 
 		for (int i = 0; i < valute.size(); i++) {
 			if (valute.get(i).equals(valuta)) {
-				if(!valute.get(i).getKursevi().contains(k)) {
 					valute.get(i).getKursevi().add(k);
 					break;
-				}
 			}
 		}
 	}
